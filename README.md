@@ -1,10 +1,7 @@
-Scenario - The health insurance contract has its own tokens called as health tokens which are either incentivized
-           or penalized to the patient wallet depending upon the footsteps.
+Scenario: The health insurance contract has its own tokens called as health tokens which are either incentivized or penalized to the patient wallet depending upon the footsteps.
 
-           1) A Patient is incentivized if the avg_week footsteps are above 5000 and value of the incetive differs 
-              depending on avg_monthly footsteps between 5 to 20 Health Tokens.
-
-	   2) If avg_week at any instance is less thank 5000 then the patient is penalized 4 Health Tokens.
+1) A Patient is incentivized if the avg_week footsteps are above 5000 and value of the incetive differs depending on avg_monthly footsteps between 5 to 20 Health Tokens.
+2) If avg_week at any instance is less thank 5000 then the patient is penalized 4 Health Tokens.
 
 Prerequisites:
 
@@ -14,13 +11,14 @@ Prerequisites:
 	4) vs code
 
 Installation:
+
 	1) Check if all the prerequisites have been installed.
 	2) Open project folder in VS Code and run "npm install" and "npm install -g truffle" in the terminal.
 	3) Through the same terminal get into ./src/Sol folder in the project.
 	4) run command "truffle migrate"
 	5) On successful migration contract address of the healthIncentive contract will be printed in the terminal
-	6) Copy contract address and paste it in contractAddress field in constants.config.js 
-        7) Run application with the command "npm start"
+	6) Copy contract address and paste it in contractAddress field in constants.config.js
+	7) Run application with the command "npm start"
 
 
 Testing  :
