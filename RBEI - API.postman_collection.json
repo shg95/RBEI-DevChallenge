@@ -1,0 +1,193 @@
+{
+	"info": {
+		"_postman_id": "1a95296d-40f5-4d40-892d-b851dbb45dd6",
+		"name": "RBEI - API",
+		"description": "Please execute the api's in the following order :\n\n1. POST/registerUser  - If changing the date please follow YYYY.MM.DD format\n2. POST/updateFootSteps - If changing the date please follow YYYY.MM.DD format\n3. POST/incentiveOrPenalty\n4. GET/getBalances",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "API 1 - Register Patient",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\t\n\t\"patientID\" :\"123\",\n\t\"insuranceProviderId\":\"234\",\n     \"registrationDate\":\"2019.09.22\",\n     \"pAge\":\"33\",\n      \"sex\":\"Male\",\n      \"pDisease\":\"High BP\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9000/registerUser",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"registerUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API 2- Update Footsteps",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\t\n\t\"pId\" :123,\n\t\"steps\":11000,\n     \"timeStamp\":\"2019.12.22\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9000/updateFootSteps",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"updateFootSteps"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API 3- Incentivize",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\t\n\t\"pId\" :123,\n\t\"monthlyAvg\":11000,\n     \"weeklyAvg\":7000\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9000/incentiveOrPenalty",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"incentiveOrPenalty"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API 4- Check Balances",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:9000/getBalances?pId=123",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"getBalances"
+					],
+					"query": [
+						{
+							"key": "pId",
+							"value": "123"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API 5- Penalize",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\t\n\t\"pId\" :123,\n\t\"monthlyAvg\":4000,\n     \"weeklyAvg\":3000\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9000/incentiveOrPenalty",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"incentiveOrPenalty"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "487ad81a-8fe7-4f2b-a6e8-b2b52688b1e4",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "093fd98e-8228-4c51-8d9e-476920f81618",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
